@@ -1,0 +1,11 @@
+<div class="container">
+    <input type="text" #txt>
+    <button type="button" class="btn btn-success" (click)="recieveData(txt)">Submit</button>
+    </div>
+    <div *ngFor="let chnge of dataupd">
+    <span *ngIf="!chnge.edit">{{chnge.Data}}</span>
+    <input *ngIf="chnge.edit" #edit (keyup)="myFunc(edit)">{{chnge.Data}} 
+    <button type="button" class="btn btn-danger" (click)="modify(chnge)">Edit</button>
+<button type="button" class="btn btn-danger" (click)="update(chnge)">Update</button>
+<button type="button" class="btn btn-danger" (click)="delete(chnge)">Delete</button>
+</div>
